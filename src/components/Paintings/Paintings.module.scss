@@ -1,0 +1,152 @@
+@import "./../App/vars.scss";
+
+.paintings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, auto));
+  grid-template-rows: minmax(205px, auto);
+  grid-auto-rows: minmax(205px, auto);
+
+  gap: 20px;
+  padding: 25px 0 0 0;
+  h2 {
+    font-size: 40px;
+  }
+}
+
+.error {
+  color: #ff0000;
+  font-size: 30px;
+}
+
+// container img
+.descriptionImg {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  border-radius: 20px;
+  padding-bottom: 50%;
+  padding-right: 100%;
+  width: 280px;
+  height: 205px;
+  cursor: pointer;
+
+  // paintings img
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+
+  .caption {
+    width: 100%;
+    height: 124px;
+    padding: 7px 0 0 15px;
+    background: rgba(255, 255, 255, 0.65);
+    color: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -94px;
+    transition: margin-bottom;
+    transition-duration: 400ms;
+    transition-timing-function: ease-out;
+
+    p {
+      margin-bottom: 5px;
+      line-height: 18px;
+      strong {
+        font-weight: 700;
+        font-size: 18px;
+      }
+      b,
+      span {
+        font-size: 13px;
+      }
+
+      span {
+        font-weight: 300;
+      }
+    }
+  }
+
+  &:hover .caption {
+    margin-bottom: 0px;
+  }
+}
+
+.filter {
+  grid-column: 1 / -1;
+}
+.filter__form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  column-gap: 20px;
+  row-gap: 15px;
+  padding: 0 0 20px 0;
+
+  .input,
+  .select {
+    border: $borderBlack;
+    padding: 15px 12px;
+    border-radius: 8px;
+    background-color: $inputBgColor;
+    color: #ffffff;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 320px) {
+  .paintings {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 380px) {
+  .filter__form {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+@media (min-width: 560px) {
+  .filter__form {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .descriptionImg {
+    width: 340px;
+    height: 249px;
+  }
+
+  .paintings {
+    grid-template-columns: repeat(auto-fill, minmax(340px, auto));
+    margin-bottom: 35px;
+  }
+
+  .filter__form {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .descriptionImg {
+    width: 300px;
+    height: 230px;
+  }
+
+  .paintings {
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .descriptionImg {
+    height: 275px;
+  }
+  .range__input {
+    width: 95px;
+  }
+}

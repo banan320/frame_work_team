@@ -1,0 +1,24 @@
+.mainWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(65px, auto);
+  padding: 10px 0 34px 0;
+}
+
+@media (min-width: 768px) {
+  .mainWrapper {
+    padding-bottom: 54px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mainWrapper {
+    padding-bottom: 62px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .mainWrapper {
+    padding-bottom: 97px;
+  }
+}
