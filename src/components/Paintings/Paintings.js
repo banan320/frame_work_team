@@ -60,7 +60,7 @@ const Paintings = ({ isDarkTheme }) => {
       `_page=${filters.currentPage}`,
       "_limit=12",
     ]
-      .filter((param) => Boolean(param))
+      .filter((param) => Boolean(param)) // При помощи filter удаляю пустые записи, чтобы в запрос не шло ?authorId=undefined
       .join("&");
 
     axios.get(`${PAINTINGS_URL}?${queryParams}`).then((res) => {
